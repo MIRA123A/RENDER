@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+             color: #333;
+            margin-bottom: 10px;
+         }
+
+        p {
+           margin-bottom : 10px;
+            font-size : 0.9rem;
+            line-height : 1.4;
+         }
+         .qcm-recap {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           
+         }
+          .qcm-recap strong {
+            font-weight : bold;
+          }
+         .average-container {
+             text-align : center;
+               padding : 15px;
+             border: 1px solid #ccc;
+             border-radius : 8px;
+             margin-bottom: 20px;
+              font-size : 1.4rem;
+             background-color : #e3f2fd;
+        }
+        .average-container span{
+            font-weight : bold;
+            font-size : 1.8rem;
+        }
+          .total-time-container {
+             text-align : center;
+               padding : 10px;
+             border: 1px solid #ccc;
+             border-radius : 8px;
+            margin-bottom: 15px;
+            background-color: #f0f0f0;
+             
+        }
+         .total-time-container span {
+              font-weight : bold;
+         }
+         .results-table{
+             width : 100%;
+            border-collapse: collapse; /* Remove extra spacing */
+            margin-bottom: 10px;
+          }
+         .results-table th, .results-table td {
+             border: 1px solid #e0e0e0; /* Thin border */
+           padding: 8px; /* Padding for spacing */
+         }
+        .results-table th{
+            background-color: #f0f0f0;
+           font-weight: bold;
+         }
+       
+	   .modern-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.modern-button svg {
+    width: 1.2em;  /* Adjust icon size */
+    height: 1.2em;  /* Adjust icon size */
+    margin-right: 8px; /* space between icon and text */
+    vertical-align: middle;
+}
+
+
+.modern-button:hover {
+  background-color: #367c39; /* Darker green on hover */
+}
+
+         .results-table td{
+            text-align : center;
+         }
+        button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          }
+         button:hover {
+            background-color: #367c39;
+         }
+    </style>
+</head>
+<body>
+	<center>
+	<a href="{{ url_for('index') }}" class="modern-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+    Retour Accueil
+</a>
+
+</center>
+    <h1>Résultats Finaux</h1>
+    <div class = "total-time-container">Temps Total : <span>{{ timer }}</span></div>
+    {% set average_score_20 = (average_score / 100) * 20 %}
+      <div class ="average-container">Votre moyenne finale : <span>{{ average_score_20|round(2) }}/20</span></div>
+    <h2>Récapitulatif par question :</h2>
+    {% for qcm in qcms %}
+      <div class="qcm-recap">
+        <h3>Question {{ qcm.id }}</h3>
+          <table class="results-table">
+                <thead>
+                   <tr>
+                       <th>Réponses sélectionnées</th>
+                        <th>Réponses correctes</th>
+                        <th>Réponses manquantes</th>
+                        <th>Réponses incorrectes</th>
+                    </tr>
+                </thead>
+               <tbody>
+                  <tr>
+                    <td>{{ qcm.results.selected }}</td>
+                    <td>{{ qcm.results.correct }}</td>
+                    <td>{{ qcm.results.missing }}</td>
+                     <td>{{ qcm.results.incorrect }}</td>
+                  </tr>
+              </tbody>
+           </table>
+          <p><strong>Moyenne:</strong> {{ (qcm.calculate_moyenne()/100*20)|round(1) if qcm.calculate_moyenne() is not none else "non disponible"}}/20</p>
+        <p><strong>Temps écoulé:</strong> {{ qcm_times[loop.index-1] }}</p>
+       </div>
+    {% endfor %}
+   
+    <form method="get" action="{{ url_for('index') }}" style = "text-align: center">
+        <button type="submit">Retour à l'accueil</button>
+    </form>
+     <form method="get" action="{{ url_for('logout') }}" style = "text-align: center">
+        <button type="submit">Déconnexion</button>
+    </form>
+</body>
+</html>

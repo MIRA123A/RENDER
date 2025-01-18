@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistiques</title>
+</head>
+<body>
+  <h1>Statistiques</h1>
+     {% if reponses_users %}
+       {% for reponse_user in reponses_users %}
+          {% set qcm = QCM.query.get(reponse_user.qcm_id) %}
+          <div style="border: 1px solid black; padding: 10px; margin-bottom: 10px;">
+             <p> <b>{{ loop.index }}.</b> {{ qcm.contenu }}</p>
+               {% if qcm.correct %}
+                   <p style="color: green;"><b>QCM Validé</b></p>
+                {% else %}
+                   <p style="color: red;"><b>Réponse incorrecte, QCM non validé</b></p>
+                {% endif %}
+                
+                <p>Votre réponse: {{ reponse_user.reponses_selectionnees }} </p>
+                <p>Les bonnes réponses: {{qcm.reponses_correctes}} </p>
+            </div>
+       {% endfor %}
+     {% else %}
+       <p>Vous n'avez pas répondu à tous les QCMs.</p>
+      {% endif %}
+    <a href="/{{matiere.nom | lower}}">Retour à la page QCM</a>
+</body>
+</html>

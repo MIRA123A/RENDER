@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Début du QCM</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0px;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+         color: #333;
+         margin-bottom: 20px;
+         border-bottom: 2px solid #e0e0e0;
+          padding-bottom: 10px;
+         text-align: center;
+           display: flex;
+            align-items: center;
+           justify-content: center;
+         }
+          h1::before {
+               {% if level == "PCEM1" %}
+                    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>'); /* Replace with your icon */
+               {% elif level == "PCEM2" %}
+                    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>'); /* Replace with your icon */
+               {% elif level == "DCEM1" %}
+                 content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.83l-1.06-1.22a5.5 5.5 0 0 0-7.78 7.78L12 21.45l8.94-8.94a5.5 5.5 0 0 0 0-7.78z"></path></svg>');
+                {% elif level == "DCEM2" %}
+                    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><rect x="8" y="4" width="8" height="4" rx="2" ry="2"></rect><line x1="16" y1="4" x2="16" y2="2"></line><line x1="8" y1="4" x2="8" y2="2"></line><path d="M4 14s1-1 4-1 4 1 4 1 5-1 5-1 4 1 4 1v6H4z"></path></svg>');
+                {% elif level == "DCEM3" %}
+                   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>');
+              {% endif %}
+             display : inline-block;
+            width : 30px;
+            height: 30px;
+           margin-right : 10px;
+        }
+        .module-container {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: -10px;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+             display : flex;
+           flex-direction: column;
+        }
+         .module-title {
+            font-weight : bold;
+            color : #333;
+            text-align : center;
+             font-size : 2rem;
+            margin-bottom: 10px;
+             white-space: nowrap;
+             border-bottom : 1px solid #e0e0e0;
+             padding-bottom: 10px;
+             display : flex;
+             align-items: center;
+             justify-content: center;
+         }
+         .module-title::before{
+             display : inline-block;
+             width : 30px;
+            height: 30px;
+           margin-right : 10px;
+        }
+        .module-grid {
+           display : grid;
+          grid-template-columns : repeat(3, 1fr);
+           align-items: center;
+         }
+           .module-grid > div{
+             text-align : center;
+         }
+          .module-info-container{
+            display: inline-block;
+              padding : 8px;
+             border: 1px solid #ccc;
+             border-radius : 8px;
+              white-space : nowrap;
+          }
+         .module-info-container span{
+             font-weight : bold;
+           font-size : 1.2rem;
+         }
+
+       .restart-container,
+        .reset-container {
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+             transition: background-color 0.3s ease;
+            white-space: nowrap;
+             margin: 5px;
+           display : flex;
+            align-items: center;
+           justify-content: center;
+            text-decoration: none;
+         }
+       .restart-container {
+           background-color: #2980b9; /* Bleu foncé */
+            border-color: #3498db; /* Bleu */
+           color: white;
+         }
+       .restart-container button{
+         color: white;
+         font-size : 1rem;
+       }
+       .restart-container:hover {
+             background-color: #2ecc71 /* Bleu */
+         }
+         .reset-container{
+             background-color: #000;
+             border-color: #000000;
+            color : #333;
+         }
+      .reset-container:hover {
+             background-color: #2ecc71;
+         }
+          .reset-container button {
+             color: #fff;
+             font-size : 1rem;
+         }
+           .certificat-container {
+             margin-top: 20px;
+            }
+         .ranking-container{
+              margin-top: 20px;
+             width : 80%;
+            border: 1px solid #e0e0e0;
+             border-radius: 8px;
+             background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+             margin-bottom : 10px;
+          }
+           .ranking-table{
+             width : 100%;
+            border-collapse: collapse;
+          }
+        .ranking-table th, .ranking-table td {
+          border: 1px solid #e0e0e0;
+          padding: 8px;
+             text-align : center;
+         }
+         .ranking-table th{
+           background-color: #f0f0f0;
+           font-weight: bold;
+         }
+             .ranking-list{
+             list-style: none;
+            padding : 0;
+          }
+        .ranking-list li{
+           margin-bottom : 5px;
+          line-height: 1.6;
+            display : flex;
+           align-items: center;
+           justify-content: center;
+         }
+           .ranking-list li span{
+             display: inline-block;
+              padding : 8px;
+             border: 1px solid #ccc;
+             border-radius : 8px;
+              white-space : nowrap;
+           margin-right : 5px;
+         }
+           .ranking-list li span b{
+              font-size : 1.2rem;
+           }
+      .ranking-title{
+         font-size : 18px;
+       font-weight : bold;
+         text-align : center;
+         margin-bottom : 10px;
+          display : flex;
+          justify-content: center;
+        }
+       .ranking-title::before {
+           content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>'); /* Replace with your icon */
+            display : inline-block;
+            width : 20px;
+            height: 20px;
+             margin-right : 5px;
+        }
+        button {
+          padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #367c39;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenue {{ username }} en&nbsp; <span>{{ level }}</span></h1>
+    
+    {% with  semesters = session.get('level') %}
+        {% if semesters == "PCEM1" %}
+             {% set current_semesters =  semesters.semestre1 %}
+          {% elif semesters == "PCEM2" %}
+            {% set current_semesters =  semesters.semestre1 %}
+        {% elif semesters == "DCEM1" %}
+            {% set current_semesters =  semesters.semestre1 %}
+        {% elif semesters == "DCEM2" %}
+            {% set current_semesters =  semesters.semestre1 %}
+          {% elif semesters == "DCEM3" %}
+            {% set current_semesters =  semesters.semestre1 %}
+        {% endif %}
+       
+    {% endwith %}
+   {% for semester, modules_list in semesters.items() %}
+    <div class="module-container">
+       <div class="module-title">
+          <span style = "margin-right: 10px;">{{ semester | upper}}</span>
+          {% if level == "PCEM1" %}
+                 
+              {% elif level == "PCEM2" %}
+                
+              {% elif level == "DCEM1" %}
+                
+                {% elif level == "DCEM2" %}
+                
+                {% elif level == "DCEM3" %}
+                
+                 {% endif %}
+        </div>
+               <div class="module-grid">
+         {% for module in modules_list %}
+            <div >
+                  
+			<div class = "module-info-container">
+                 {{ module }}: <span>{{ session.get('certificats')[module]['moyenne'] }}/20</span>
+              {% if  'username' in session and module in user_ranks %}
+                <span>RANG: {{ user_ranks[module] }}</span>
+              {% endif %}
+              </div>
+			        <a class = "restart-container" href="{{ url_for('qcm', matiere=module) }}"><button>REVOIR LES QCMs</button></a>
+           <a class = "reset-container" href="{{ url_for('reset_qcms', matiere=module) }}"><button>REFAIRE LES QCMs</button></a>
+             </div>
+          {% endfor %}
+         </div>
+         <div class="module-grid">
+         {% for module in modules_list %}
+            
+          {% endfor %}
+         </div>
+     </div>
+   {% endfor %}
+
+    
+<div class="ranking-container">
+    <p class="ranking-title">Classement par moyenne finale :</p>
+    <table class="ranking-table">
+        <thead>
+            <tr>
+                <th>Rang</th>
+                <th>Membre</th>
+                <th>Moyenne</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Ajouter l'utilisateur en haut si trouvé -->
+            {% set user_added = false %}
+            {% for user, scores, rank in ranked_total %}
+                {% if session['username'] == user and not user_added %}
+                <tr style="background-color: #7ff7a0;">
+                    <td>{{ rank }}
+                        <span style=" border-radius : 4px; padding : 2px; margin-left : 4px; color : #50463e; font-weight: bold;">(Vous)</span>
+                    </td>
+                    <td>{{ user }}</td>
+                    <td><span><b>{{ scores.moyenne|round(2) }}</b></span></td>
+                </tr>
+                {% set user_added = true %}
+                {% endif %}
+            {% endfor %}
+
+            <!-- Afficher les classements normaux -->
+            {% for user, scores, rank in ranked_total %}
+                {% if session['username'] != user or not user_added %}
+                    <tr>
+                        <td>{{ rank }}
+                            {% if session['username'] == user %}
+                                <span style="background-color : #fff0c0; border-radius : 4px; padding : 2px; margin-left : 4px; color : #50463e; font-weight: bold;">(Vous)</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ user }}</td>
+                        <td><span><b>{{ scores.moyenne|round(2) }}</b></span></td>
+                    </tr>
+                 {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+     <!-- Start of semester ranking -->
+    {% if semester_rankings %}
+    {% for semester, rankings in semester_rankings.items() %}
+        <div class="ranking-container">
+            <p class="ranking-title">Classement par moyenne finale pour {{ semester | upper }} :</p>
+             <table class="ranking-table">
+                <thead>
+                   <tr>
+                        <th>Rang</th>
+                        <th>Membre</th>
+                        <th>Moyenne</th>
+                    </tr>
+                </thead>
+               <tbody>
+                  {% set user_added = false %}
+                  {% for user, scores, rank in rankings[:5] %}
+                    {% if session['username'] == user and not user_added %}
+                     <tr style="background-color: #7ff7a0;">
+                         <td>{{ rank }}
+                            <span style=" border-radius : 4px;padding : 2px; margin-left : 4px; color : #50463e; font-weight: bold;">(Vous)</span>
+                            </td>
+                         <td>{{ user }}</td>
+                         <td><span><b>{{ scores.moyenne|round(2) }}</b></span></td>
+                      </tr>
+                     {% set user_added = true %}
+                    {% endif %}
+                   {% endfor %}
+                   {% for user, scores, rank in rankings[:5] %}
+                      {% if session['username'] != user or not user_added %}
+                       <tr>
+                           <td>{{ rank }}
+                               {% if session['username'] == user %}
+                               <span style="background-color : #fff0c0;  border-radius : 4px;padding : 2px; margin-left : 4px; color : #50463e; font-weight: bold;">(Vous)</span>
+                               {% endif %}
+                         </td>
+                         <td>{{ user }}</td>
+                         <td><span><b>{{ scores.moyenne|round(2) }}</b></span></td>
+                      </tr>
+                     {% endif %}
+                   {% endfor %}
+              </tbody>
+           </table>
+        </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- End of semester ranking -->
+     <div class = "certificat-container">
+          <form method="get" action="{{ url_for('logout') }}" style = "text-align: center">
+              <button type="submit">Déconnexion</button>
+          </form>
+        </div>
+</body>
+</html>

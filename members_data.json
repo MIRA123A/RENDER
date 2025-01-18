@@ -1,0 +1,815 @@
+{
+    "GHAZI": {
+        "password": "GHAZI",
+        "email": "ousamamechergui@gmail.com",
+        "is_active": true,
+        "level": "PCEM1",
+        "certificats": {
+            "theme1": {
+                "nom": "theme1",
+                "moyenne": 0
+            },
+            "theme2A": {
+                "nom": "theme2A",
+                "moyenne": 0
+            },
+            "theme3": {
+                "nom": "theme3",
+                "moyenne": 0
+            },
+            "theme4": {
+                "nom": "theme4",
+                "moyenne": 0
+            },
+            "theme5A": {
+                "nom": "theme5A",
+                "moyenne": 0
+            },
+            "theme7": {
+                "nom": "theme7",
+                "moyenne": 0
+            },
+            "theme2B": {
+                "nom": "theme2B",
+                "moyenne": 0
+            },
+            "theme5B": {
+                "nom": "theme5B",
+                "moyenne": 0
+            },
+            "theme6": {
+                "nom": "theme6",
+                "moyenne": 0
+            },
+            "theme8": {
+                "nom": "theme8",
+                "moyenne": 0
+            },
+            "theme9": {
+                "nom": "theme9",
+                "moyenne": 0
+            },
+            "theme71": {
+                "nom": "theme71",
+                "moyenne": 0
+            }
+        },
+        "qcms_theme1": [],
+        "qcms_theme2A": [],
+        "qcms_theme3": [],
+        "qcms_theme4": [],
+        "qcms_theme5A": [],
+        "qcms_theme7": [
+            {
+                "id": 1,
+                "question": "[SESSION JANVIER 2024]: La coloration de Gram:",
+                "propositions": [
+                    "Est adapt\u00e9e \u00e0 toutes les bact\u00e9ries.",
+                    "Permet la distinction des bact\u00e9ries en fonction de leurs membranes cytoplasmique.",
+                    "Aide \u00e0 l\u2019identification bact\u00e9rienne.",
+                    "Guide le traitement aux antibiotiques.",
+                    "Met en \u00e9vidence le caract\u00e8re alcoolo-r\u00e9sistant des bact\u00e9ries."
+                ],
+                "correct_answers": [
+                    2
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 2,
+                "question": "[SESSION JANVIER 2024]: Les exotoxines:",
+                "propositions": [
+                    "Sont produites uniquement par les bact\u00e9ries Gram (+).",
+                    "Peuvent \u00eatre responsable d\u2019un \u00e9tat de choc septique.",
+                    "Sont de nature prot\u00e9ique.",
+                    "Permettent l\u2019adh\u00e9sion aux cellules de l\u2019h\u00f4te.",
+                    "Peuvent \u00eatre transform\u00e9es en anatoxine."
+                ],
+                "correct_answers": [
+                    2,
+                    3,
+                    4
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 3,
+                "question": "[SESSION JANVIER 2024]: Le biofilm:",
+                "propositions": [
+                    "Peut \u00eatre responsable d\u2019un choc septique.",
+                    "Assure l\u2019invasion de la cellule h\u00f4te.",
+                    "Constitue une barri\u00e8re contre la diffusion des antibiotiques.",
+                    "Permet la conjugaison bact\u00e9rienne.",
+                    "Permet l\u2019adh\u00e9sion des bact\u00e9ries aux cellules et aux biomat\u00e9riaux."
+                ],
+                "correct_answers": [
+                    3,
+                    4,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 4,
+                "question": "[SESSION JANVIER 2024]: La phagoth\u00e9rapie:",
+                "propositions": [
+                    "N\u00e9cessite l\u2019intervention d\u2019un phage lytique.",
+                    "N\u00e9cessite l\u2019identification pr\u00e9alable de la bact\u00e9rie responsable de l\u2019infection.",
+                    "Est un outil th\u00e9rapeutique fr\u00e9quemment utilis\u00e9 en routine.",
+                    "Peut \u00eatre utilis\u00e9 dans le traitement d\u2019infection virale.",
+                    "Peut \u00eatre indiqu\u00e9e en cas de multir\u00e9sistance bact\u00e9rienne aux antibiotiques."
+                ],
+                "correct_answers": [
+                    2,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 5,
+                "question": "[SESSION JANVIER 2024]: Parmi les propri\u00e9t\u00e9s d\u2019une bact\u00e9rie lysog\u00e8ne:",
+                "propositions": [
+                    "L\u2019immunit\u00e9.",
+                    "La comp\u00e9tence.",
+                    "L\u2019induction.",
+                    "La lyse bact\u00e9rienne.",
+                    "La conversion lysog\u00e9nique."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 6,
+                "question": "[SESSION JANVIER 2024]: La technique PCR en vue d\u2019un diagnostic virologique:",
+                "propositions": [
+                    "Est r\u00e9serv\u00e9e au laboratoire de recherche.",
+                    "N\u00e9cessite un acheminement rapide du pr\u00e9l\u00e8vement au laboratoire.",
+                    "N\u00e9cessite une \u00e9tape d\u2019extraction de l\u2019acide nucl\u00e9ique.",
+                    "N\u00e9cessite une \u00e9tape de r\u00e9tro-transcription pour les virus \u00e0 ADN.",
+                    "Peut quantifier le g\u00e9nome viral en cas de PCR en temps r\u00e9el."
+                ],
+                "correct_answers": [
+                    2,
+                    3,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 7,
+                "question": "[SESSION JANVIER 2024]: La transduction bact\u00e9rienne:",
+                "propositions": [
+                    "Permet l\u2019int\u00e9gration dans la cellule de l\u2019ADN libre du milieu.",
+                    "N\u00e9cessite l\u2019intervention des pili sexuels.",
+                    "Est assur\u00e9 par les phages.",
+                    "Peut permettre l\u2019acquisition de facteurs de virulence par la bact\u00e9rie.",
+                    "N\u00e9cessite une bact\u00e9rie en \u00e9tat de comp\u00e9tence."
+                ],
+                "correct_answers": [
+                    1,
+                    3,
+                    4
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 8,
+                "question": "[SESSION JANVIER 2024]: Au cours d\u2019un croisement entre une bact\u00e9rie F (+) et une bact\u00e9rie F (-) :",
+                "propositions": [
+                    "Le transfert du facteur F se fait \u00e0 haute fr\u00e9quence.",
+                    "Le facteur F est autonome dans la bact\u00e9rie F (+).",
+                    "Le transfert se fait \u00e0 sens unique.",
+                    "Le facteur F s\u2019int\u00e8gre au chromosome de la bact\u00e9rie F (-).",
+                    "La bact\u00e9rie qui a acquis le facteur F devient HFR (haute fr\u00e9quence de recombinaison)."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    3
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 9,
+                "question": "[SESSION JANVIER 2024]: L\u2019oxyure est un (e):",
+                "propositions": [
+                    "Parasite appartient au r\u00e8gne animal.",
+                    "Protozoaire.",
+                    "N\u00e9matode.",
+                    "Insecte.",
+                    "Acarien."
+                ],
+                "correct_answers": [
+                    3
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 10,
+                "question": "[SESSION JANVIER 2024]: La prophylaxie individuelle des maladies parasitaires repose sur:",
+                "propositions": [
+                    "Le lavage des mains.",
+                    "La vaccination.",
+                    "L\u2019\u00e9ducation sanitaire.",
+                    "La lutte contre les animaux sauvages.",
+                    "Les mesures hygi\u00e9no-di\u00e9t\u00e9tiques."
+                ],
+                "correct_answers": [
+                    1,
+                    3,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 11,
+                "question": "[SESSION JANVIER 2024]: Les protozoaires:",
+                "propositions": [
+                    "Sont des \u00eatres unicellulaires.",
+                    "Sont class\u00e9s selon leur mode de d\u00e9placement.",
+                    "Comportent des sporozoaires, des flagell\u00e9s et des arthropodes.",
+                    "Appartiennent au r\u00e8gne fongique.",
+                    "Peuvent se pr\u00e9senter sous forme v\u00e9g\u00e9tative et ou kystique."
+                ],
+                "correct_answers": [
+                    1,
+                    2
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 12,
+                "question": "[SESSION JANVIER 2024]: Les toxi-infections alimentaires par les salmonella non typhique:",
+                "propositions": [
+                    "Sont fr\u00e9quentes.",
+                    "Ont un taux de mortalit\u00e9 \u00e9lev\u00e9.",
+                    "Ont une dur\u00e9e d\u2019incubation de 2 \u00e0 4 heures.",
+                    "Sont trait\u00e9es par des antibiotiques chez tous les patients.",
+                    "Ont comme principal m\u00e9canisme physiopathologique la prolif\u00e9ration."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 13,
+                "question": "[SESSION JANVIER 2024]: Concernant la TIAC:",
+                "propositions": [
+                    "Le m\u00e9canisme physiologique d\u2019une toxi-infection alimentaire collective par le thon est la toxinogen\u00e8se.",
+                    "Les toxi-infections alimentaires collectives du Clostridium botulinum peuvent entra\u00eener des paralysies gravissimes.",
+                    "La shigellose touche pr\u00e9f\u00e9rentiellement les adultes.",
+                    "La contamination des aliments par le S. Aureus se fait lors de la pr\u00e9paration par un porteur sain ou pr\u00e9sentant une plaie infect\u00e9e.",
+                    "Les TIAC par le S. Aureus sont install\u00e9es brutalement."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 14,
+                "question": "[SESSION JANVIER 2024]: Les principaux agents infectieux des intoxications alimentaires sont:",
+                "propositions": [
+                    "Clostridium perfringens.",
+                    "Clostridium botulinum.",
+                    "Staphylococcus aureus.",
+                    "Salmonella non typhi.",
+                    "Listeria monocytogenes."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 15,
+                "question": "[SESSION JANVIER 2024]: Les signes qui ne font pas partie de ceux g\u00e9n\u00e9r\u00e9s par les insecticides organophosphor\u00e9s sont:",
+                "propositions": [
+                    "Douleur abdominale.",
+                    "R\u00e9vulsion oculaire.",
+                    "Convulsion.",
+                    "Hypersialorrh\u00e9e.",
+                    "Paralysie musculaire."
+                ],
+                "correct_answers": [
+                    1
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 16,
+                "question": "[SESSION JANVIER 2024]: L\u2019intoxication par le CO:",
+                "propositions": [
+                    "Est \u00e9voqu\u00e9e face \u00e0 un patient comateux dans un espace confin\u00e9.",
+                    "N\u2019est pas mortelle.",
+                    "Peut \u00eatre pr\u00e9venue par l\u2019entretien des appareils de chauffage.",
+                    "Peut n\u00e9cessiter une assistance respiratoire.",
+                    "Est dangereuse car le CO est incolore et inodore."
+                ],
+                "correct_answers": [
+                    1,
+                    3,
+                    4,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 17,
+                "question": "[SESSION JANVIER 2024]: L\u2019intoxication au parac\u00e9tamol:",
+                "propositions": [
+                    "Est le plus volontaire.",
+                    "Entra\u00eene essentiellement une toxicit\u00e9 r\u00e9nale.",
+                    "Est responsable d\u2019une lyse des cellules h\u00e9patiques.",
+                    "A comme antidote de choix le N-ac\u00e9tylcyst\u00e9ine.",
+                    "Ne touche que les enfants de moins de 5 ans."
+                ],
+                "correct_answers": [
+                    3,
+                    4
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 18,
+                "question": "[SESSION JANVIER 2024]: L\u2019agressivit\u00e9 est:",
+                "propositions": [
+                    "Connue comme un comportement instinctif.",
+                    "G\u00e9r\u00e9e par le syst\u00e8me limbique.",
+                    "Contr\u00f4l\u00e9e par le cortex temporal.",
+                    "Inn\u00e9e, non influenc\u00e9e par l\u2019environnement."
+                ],
+                "correct_answers": [
+                    2
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            }
+        ],
+        "qcms_theme2B": [],
+        "qcms_theme5B": [],
+        "qcms_theme6": [],
+        "qcms_theme8": [],
+        "qcms_theme9": [],
+        "qcms_theme71": [
+            {
+                "id": 1,
+                "question": "[SESSION JANVIER 2024]: La coloration de Gram:",
+                "propositions": [
+                    "Est adapt\u00e9e \u00e0 toutes les bact\u00e9ries.",
+                    "Permet la distinction des bact\u00e9ries en fonction de leurs membranes cytoplasmique.",
+                    "Aide \u00e0 l\u2019identification bact\u00e9rienne.",
+                    "Guide le traitement aux antibiotiques.",
+                    "Met en \u00e9vidence le caract\u00e8re alcoolo-r\u00e9sistant des bact\u00e9ries."
+                ],
+                "correct_answers": [
+                    2
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 2,
+                "question": "[SESSION JANVIER 2024]: Les exotoxines:",
+                "propositions": [
+                    "Sont produites uniquement par les bact\u00e9ries Gram (+).",
+                    "Peuvent \u00eatre responsable d\u2019un \u00e9tat de choc septique.",
+                    "Sont de nature prot\u00e9ique.",
+                    "Permettent l\u2019adh\u00e9sion aux cellules de l\u2019h\u00f4te.",
+                    "Peuvent \u00eatre transform\u00e9es en anatoxine."
+                ],
+                "correct_answers": [
+                    2,
+                    3,
+                    4
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 3,
+                "question": "[SESSION JANVIER 2024]: Le biofilm:",
+                "propositions": [
+                    "Peut \u00eatre responsable d\u2019un choc septique.",
+                    "Assure l\u2019invasion de la cellule h\u00f4te.",
+                    "Constitue une barri\u00e8re contre la diffusion des antibiotiques.",
+                    "Permet la conjugaison bact\u00e9rienne.",
+                    "Permet l\u2019adh\u00e9sion des bact\u00e9ries aux cellules et aux biomat\u00e9riaux."
+                ],
+                "correct_answers": [
+                    3,
+                    4,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 4,
+                "question": "[SESSION JANVIER 2024]: La phagoth\u00e9rapie:",
+                "propositions": [
+                    "N\u00e9cessite l\u2019intervention d\u2019un phage lytique.",
+                    "N\u00e9cessite l\u2019identification pr\u00e9alable de la bact\u00e9rie responsable de l\u2019infection.",
+                    "Est un outil th\u00e9rapeutique fr\u00e9quemment utilis\u00e9 en routine.",
+                    "Peut \u00eatre utilis\u00e9 dans le traitement d\u2019infection virale.",
+                    "Peut \u00eatre indiqu\u00e9e en cas de multir\u00e9sistance bact\u00e9rienne aux antibiotiques."
+                ],
+                "correct_answers": [
+                    2,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 5,
+                "question": "[SESSION JANVIER 2024]: Parmi les propri\u00e9t\u00e9s d\u2019une bact\u00e9rie lysog\u00e8ne:",
+                "propositions": [
+                    "L\u2019immunit\u00e9.",
+                    "La comp\u00e9tence.",
+                    "L\u2019induction.",
+                    "La lyse bact\u00e9rienne.",
+                    "La conversion lysog\u00e9nique."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 6,
+                "question": "[SESSION JANVIER 2024]: La technique PCR en vue d\u2019un diagnostic virologique:",
+                "propositions": [
+                    "Est r\u00e9serv\u00e9e au laboratoire de recherche.",
+                    "N\u00e9cessite un acheminement rapide du pr\u00e9l\u00e8vement au laboratoire.",
+                    "N\u00e9cessite une \u00e9tape d\u2019extraction de l\u2019acide nucl\u00e9ique.",
+                    "N\u00e9cessite une \u00e9tape de r\u00e9tro-transcription pour les virus \u00e0 ADN.",
+                    "Peut quantifier le g\u00e9nome viral en cas de PCR en temps r\u00e9el."
+                ],
+                "correct_answers": [
+                    2,
+                    3,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 7,
+                "question": "[SESSION JANVIER 2024]: La transduction bact\u00e9rienne:",
+                "propositions": [
+                    "Permet l\u2019int\u00e9gration dans la cellule de l\u2019ADN libre du milieu.",
+                    "N\u00e9cessite l\u2019intervention des pili sexuels.",
+                    "Est assur\u00e9 par les phages.",
+                    "Peut permettre l\u2019acquisition de facteurs de virulence par la bact\u00e9rie.",
+                    "N\u00e9cessite une bact\u00e9rie en \u00e9tat de comp\u00e9tence."
+                ],
+                "correct_answers": [
+                    1,
+                    3,
+                    4
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 8,
+                "question": "[SESSION JANVIER 2024]: Au cours d\u2019un croisement entre une bact\u00e9rie F (+) et une bact\u00e9rie F (-) :",
+                "propositions": [
+                    "Le transfert du facteur F se fait \u00e0 haute fr\u00e9quence.",
+                    "Le facteur F est autonome dans la bact\u00e9rie F (+).",
+                    "Le transfert se fait \u00e0 sens unique.",
+                    "Le facteur F s\u2019int\u00e8gre au chromosome de la bact\u00e9rie F (-).",
+                    "La bact\u00e9rie qui a acquis le facteur F devient HFR (haute fr\u00e9quence de recombinaison)."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    3
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 9,
+                "question": "[SESSION JANVIER 2024]: L\u2019oxyure est un (e):",
+                "propositions": [
+                    "Parasite appartient au r\u00e8gne animal.",
+                    "Protozoaire.",
+                    "N\u00e9matode.",
+                    "Insecte.",
+                    "Acarien."
+                ],
+                "correct_answers": [
+                    3
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 10,
+                "question": "[SESSION JANVIER 2024]: La prophylaxie individuelle des maladies parasitaires repose sur:",
+                "propositions": [
+                    "Le lavage des mains.",
+                    "La vaccination.",
+                    "L\u2019\u00e9ducation sanitaire.",
+                    "La lutte contre les animaux sauvages.",
+                    "Les mesures hygi\u00e9no-di\u00e9t\u00e9tiques."
+                ],
+                "correct_answers": [
+                    1,
+                    3,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 11,
+                "question": "[SESSION JANVIER 2024]: Les protozoaires:",
+                "propositions": [
+                    "Sont des \u00eatres unicellulaires.",
+                    "Sont class\u00e9s selon leur mode de d\u00e9placement.",
+                    "Comportent des sporozoaires, des flagell\u00e9s et des arthropodes.",
+                    "Appartiennent au r\u00e8gne fongique.",
+                    "Peuvent se pr\u00e9senter sous forme v\u00e9g\u00e9tative et ou kystique."
+                ],
+                "correct_answers": [
+                    1,
+                    2
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 12,
+                "question": "[SESSION JANVIER 2024]: Les toxi-infections alimentaires par les salmonella non typhique:",
+                "propositions": [
+                    "Sont fr\u00e9quentes.",
+                    "Ont un taux de mortalit\u00e9 \u00e9lev\u00e9.",
+                    "Ont une dur\u00e9e d\u2019incubation de 2 \u00e0 4 heures.",
+                    "Sont trait\u00e9es par des antibiotiques chez tous les patients.",
+                    "Ont comme principal m\u00e9canisme physiopathologique la prolif\u00e9ration."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 13,
+                "question": "[SESSION JANVIER 2024]: Concernant la TIAC:",
+                "propositions": [
+                    "Le m\u00e9canisme physiologique d\u2019une toxi-infection alimentaire collective par le thon est la toxinogen\u00e8se.",
+                    "Les toxi-infections alimentaires collectives du Clostridium botulinum peuvent entra\u00eener des paralysies gravissimes.",
+                    "La shigellose touche pr\u00e9f\u00e9rentiellement les adultes.",
+                    "La contamination des aliments par le S. Aureus se fait lors de la pr\u00e9paration par un porteur sain ou pr\u00e9sentant une plaie infect\u00e9e.",
+                    "Les TIAC par le S. Aureus sont install\u00e9es brutalement."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 14,
+                "question": "[SESSION JANVIER 2024]: Les principaux agents infectieux des intoxications alimentaires sont:",
+                "propositions": [
+                    "Clostridium perfringens.",
+                    "Clostridium botulinum.",
+                    "Staphylococcus aureus.",
+                    "Salmonella non typhi.",
+                    "Listeria monocytogenes."
+                ],
+                "correct_answers": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 15,
+                "question": "[SESSION JANVIER 2024]: Les signes qui ne font pas partie de ceux g\u00e9n\u00e9r\u00e9s par les insecticides organophosphor\u00e9s sont:",
+                "propositions": [
+                    "Douleur abdominale.",
+                    "R\u00e9vulsion oculaire.",
+                    "Convulsion.",
+                    "Hypersialorrh\u00e9e.",
+                    "Paralysie musculaire."
+                ],
+                "correct_answers": [
+                    1
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 16,
+                "question": "[SESSION JANVIER 2024]: L\u2019intoxication par le CO:",
+                "propositions": [
+                    "Est \u00e9voqu\u00e9e face \u00e0 un patient comateux dans un espace confin\u00e9.",
+                    "N\u2019est pas mortelle.",
+                    "Peut \u00eatre pr\u00e9venue par l\u2019entretien des appareils de chauffage.",
+                    "Peut n\u00e9cessiter une assistance respiratoire.",
+                    "Est dangereuse car le CO est incolore et inodore."
+                ],
+                "correct_answers": [
+                    1,
+                    3,
+                    4,
+                    5
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 17,
+                "question": "[SESSION JANVIER 2024]: L\u2019intoxication au parac\u00e9tamol:",
+                "propositions": [
+                    "Est le plus volontaire.",
+                    "Entra\u00eene essentiellement une toxicit\u00e9 r\u00e9nale.",
+                    "Est responsable d\u2019une lyse des cellules h\u00e9patiques.",
+                    "A comme antidote de choix le N-ac\u00e9tylcyst\u00e9ine.",
+                    "Ne touche que les enfants de moins de 5 ans."
+                ],
+                "correct_answers": [
+                    3,
+                    4
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            },
+            {
+                "id": 18,
+                "question": "[SESSION JANVIER 2024]: L\u2019agressivit\u00e9 est:",
+                "propositions": [
+                    "Connue comme un comportement instinctif.",
+                    "G\u00e9r\u00e9e par le syst\u00e8me limbique.",
+                    "Contr\u00f4l\u00e9e par le cortex temporal.",
+                    "Inn\u00e9e, non influenc\u00e9e par l\u2019environnement."
+                ],
+                "correct_answers": [
+                    2
+                ],
+                "user_answers": [],
+                "results": null,
+                "done": false,
+                "time_elapsed": 0,
+                "cours": 1
+            }
+        ],
+        "registration_date": "18/01/2025"
+    }
+}

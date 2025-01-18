@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+.correct {
+    background-color: lightgreen;
+}
+.incorrect {
+    background-color: lightcoral;
+}
+.manquante {
+    background-color: lightyellow;
+}
+.qcm-result {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.propositions-list{
+    list-style: none;
+    padding: 0;
+}
+.propositions-list li {
+    padding: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 2px
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Evolution des moyennes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+             display: flex;
+           flex-direction: column;
+         align-items: center;
+         text-align: center;
+       }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        p {
+           margin-bottom : 10px;
+        }
+        button {
+           padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+             margin: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #367c39;
+        }
+       .matiere-container {
+            background-color: #d1ecf1; /* Couleur de fond bleu clair */
+           border-color: #b3e4ed;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+             margin-bottom : 10px;
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+        }
+
+        .average-score-container{
+          background-color: #fff3cd; /* Couleur de fond jaune clair */
+         border-color: #ffeeba;
+            padding: 15px;
+            border-radius: 10px;
+             font-size: 18px;
+            margin-bottom : 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
+    </style>
+</head>
+<body>
+   <h1>Evolution des moyennes par Certificat</h1>
+    
+    <div class = "matiere-container">
+        CARDIOLOGIE
+    </div>
+    <div class = "average-score-container">
+     <p>Moyenne finale acquise: {{ certificats['cardiologie'].moyenne }}/20</p>
+    </div>
+    
+    <div class = "matiere-container">
+        Certificat Infectieux
+    </div>
+    <div class = "average-score-container">
+          <p>Moyenne finale acquise: {{ certificats['infectieux'].moyenne }}/20</p>
+    </div>
+    
+    <form method="get" action="{{ url_for('index') }}" >
+        <button type="submit">Retour à l'accueil</button>
+    </form>
+</body>
+</html>

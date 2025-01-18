@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation</title>
+     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+             display: flex;
+           flex-direction: column;
+         align-items: center;
+         text-align: center;
+       }
+
+       
+         button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+             margin: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #367c39;
+        }
+      
+    </style>
+</head>
+<body>
+    <h1>Confirmation</h1>
+    <p>{{ message }}</p>
+     <form method="get" action="{{ url_for('login') }}">
+        <button type="submit">Retourner à la page de connexion</button>
+    </form>
+</body>
+</html>

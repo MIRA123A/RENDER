@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultats du Quiz</title>
+</head>
+<body>
+    <h1>Résultats du Quiz</h1>
+        {% for i, qcm in qcm_data | enumerate %}
+                <h2>QCM {{ i+1 }}</h2>
+               <p>Score : {{ qcm.reponses_correctes | length * (qcm.reponses_utilisateur|select | length/qcm.reponses_correctes | length  if qcm.reponses_correctes | length >0 else 0) * 100  |round }} %</p>
+                <p>Temps passé : {{ "%.2f" | format(temps[i]) }} secondes</p>
+        {% endfor %}
+        <p>Moyenne finale : {{ moyenne_finale | round(2)  }}%</p>
+</body>
+</html>

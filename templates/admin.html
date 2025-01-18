@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+      <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+             display: flex;
+           flex-direction: column;
+         align-items: center;
+         text-align: center;
+       }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            display: block; /* Needed to limit height to make header position fixed*/
+            max-height: 500px; /* Adjust the max-height as needed for your content*/
+          overflow-y: auto;  /* Make the content scrollable vertically*/
+           
+        }
+        thead th{
+          position : sticky; /* Sticky the headers */
+            top: 0px;
+             background: #f0f0f0; /* set background color to the head */
+            box-shadow: 0 1px 1px #0002; /* adding some shadow*/
+            z-index : 1; /* to always display them in front of the body of table*/
+
+        }
+         th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+             text-align: left;
+         }
+       th {
+          background-color: #f2f2f2;
+          position : relative; /* to position the arrows*/
+          cursor : pointer; /* indicate clickable*/
+            text-align : center;
+         }
+          th .sort-arrows {
+                position : absolute;
+                 top : 50%;
+              transform: translateY(-50%);
+             right : 5px;
+             display: inline-block;
+              
+           }
+        th .sort-arrows .arrow-up{
+          display : inline-block;
+             border-bottom: 4px solid #444;
+            border-left: 4px solid transparent;
+           border-right: 4px solid transparent;
+           width: 0px;
+          height: 0;
+            transition: all 0.2s ease; /* smooth transitions*/
+          margin-left:2px;
+         }
+         th .sort-arrows .arrow-down{
+          display : inline-block;
+            border-top: 4px solid #444;
+            border-left: 4px solid transparent;
+           border-right: 4px solid transparent;
+           width: 0px;
+            height : 0;
+             transition: all 0.2s ease;
+             margin-left:2px;
+        }
+        th .sort-arrows .arrow-up.active{
+           border-bottom-color: #007bff
+         }
+       th .sort-arrows .arrow-down.active{
+         border-top-color : #007bff;
+       }
+         button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+             margin: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #367c39;
+        }
+        .error {
+         color : red;
+        }
+          .session-count {
+             font-weight: bold;
+              color : #333;
+          }
+          .user-online{
+             color : green;
+          }
+          .user-offline{
+             color : grey;
+         }
+         select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: white; /* White background */
+            border: 1px solid #ccc; /* Thin border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 10px;
+             margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1rem;
+            color: #333;
+            cursor: pointer;
+             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+            background-repeat: no-repeat;
+             background-position: right 10px center;
+            background-size : 1.2em;
+              padding-right : 30px;
+              transition: border-color 0.3s ease; /* smooth transition on hover */
+
+         }
+        select:focus {
+            outline: none;
+           border-color : #4CAF50;
+        }
+          select::-ms-expand { /* For IE and Edge */
+             display: none;
+         }
+
+    </style>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <p>Bienvenue, Administrateur.</p>
+     <p>Vous avez <b>{{ total_members }}</b> membres dans la plateforme.</p>
+      {% if error %}
+            <p class = "error">{{ error }}</p>
+        {% endif %}
+   <a href="{{ url_for('add_member') }}"><button>Ajouter Membre</button></a>
+        <form method="get" style = "margin-top: 10px">
+            <input type="text" name="search" placeholder="Rechercher par nom ou email" value = "{{ search_term }}" style = "margin-bottom: 10px">
+              <label for="level">Filtrer par niveau</label>
+        <select name="level" onchange="this.form.submit()">
+            <option value="all">Tous les niveaux</option>
+            <option value="PCEM1" {% if level_filter == 'PCEM1' %}selected{% endif %}>PCEM1</option>
+            <option value="PCEM2" {% if level_filter == 'PCEM2' %}selected{% endif %}>PCEM2</option>
+            <option value="DCEM1" {% if level_filter == 'DCEM1' %}selected{% endif %}>DCEM1</option>
+            <option value="DCEM2" {% if level_filter == 'DCEM2' %}selected{% endif %}>DCEM2</option>
+             <option value="DCEM3" {% if level_filter == 'DCEM3' %}selected{% endif %}>DCEM3</option>
+        </select>
+            <button type="submit">Rechercher</button>
+        </form>
+
+    <h2>Liste des Membres</h2>
+     <table>
+        <thead>
+            <tr>
+              <th>
+              <a href="?sort_by=username&sort_order={% if sort_by == 'username' and sort_order == 'asc' %}desc{% else %}asc{% endif %}" style="text-decoration: none; color:inherit;">
+              Nom d'utilisateur
+               <span class = "sort-arrows">
+                   <span class = "arrow-up {% if sort_by == 'username' and sort_order == 'asc' %}active{% endif %}"></span>
+                    <span class="arrow-down {% if sort_by == 'username' and sort_order == 'desc' %}active{% endif %}"></span>
+              </span>
+              </a>
+             </th>
+             <th>
+             <a href="?sort_by=email&sort_order={% if sort_by == 'email' and sort_order == 'asc' %}desc{% else %}asc{% endif %}" style="text-decoration: none; color:inherit;">
+             Email
+               <span class = "sort-arrows">
+                   <span class = "arrow-up {% if sort_by == 'email' and sort_order == 'asc' %}active{% endif %}"></span>
+                    <span class="arrow-down {% if sort_by == 'email' and sort_order == 'desc' %}active{% endif %}"></span>
+                </span>
+             </a>
+           </th>
+            <th>Statut</th>
+             <th>
+              <a href="?sort_by=level&sort_order={% if sort_by == 'level' and sort_order == 'asc' %}desc{% else %}asc{% endif %}" style="text-decoration: none; color:inherit;">
+                 Niveau
+               <span class = "sort-arrows">
+                   <span class = "arrow-up {% if sort_by == 'level' and sort_order == 'asc' %}active{% endif %}"></span>
+                    <span class="arrow-down {% if sort_by == 'level' and sort_order == 'desc' %}active{% endif %}"></span>
+                </span>
+              </a>
+              </th>
+               <th>
+                <a href="?sort_by=password&sort_order={% if sort_by == 'password' and sort_order == 'asc' %}desc{% else %}asc{% endif %}" style="text-decoration: none; color:inherit;">
+                    Mot de Passe
+               <span class = "sort-arrows">
+                   <span class = "arrow-up {% if sort_by == 'password' and sort_order == 'asc' %}active{% endif %}"></span>
+                    <span class="arrow-down {% if sort_by == 'password' and sort_order == 'desc' %}active{% endif %}"></span>
+                </span>
+                </a>
+             </th>
+              <th>
+               <a href="?sort_by=registration_date&sort_order={% if sort_by == 'registration_date' and sort_order == 'asc' %}desc{% else %}asc{% endif %}" style="text-decoration: none; color:inherit;">
+                   Date d'inscription
+               <span class = "sort-arrows">
+                    <span class = "arrow-up {% if sort_by == 'registration_date' and sort_order == 'asc' %}active{% endif %}"></span>
+                    <span class="arrow-down {% if sort_by == 'registration_date' and sort_order == 'desc' %}active{% endif %}"></span>
+                </span>
+                </a>
+             </th>
+                <th>Sessions</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for username, data in members.items() %}
+             <tr>
+                <td>{{ username }}</td>
+                 <td>{{ data.get('email', 'N/A') }}</td>
+                <td>
+                     {% if logged_in_users.get(username) %}
+                      <span class="user-online">Connecté</span>
+                   {% else %}
+                      <span class="user-offline">Déconnecté</span>
+                    {% endif %}
+                 </td>
+                 <td>{{ data.get('level', 'N/A') }}</td>
+                  <td>{{ data.get('password', 'N/A') }}</td>
+                    <td>{{ data.get('registration_date', 'N/A') }}</td>
+                 <td class="session-count">
+                   {{ logged_in_users.get(username, 0) }}
+                 </td>
+                  <td>
+                      {% if username not in ['admin'] %}
+                          <a href="{{ url_for('delete_member', username=username) }}">
+                            <button>Supprimer</button>
+                          </a>
+                           <a href="{{ url_for('edit_member', username=username) }}">
+                            <button>Modifier</button>
+                           </a>
+                      {% endif %}
+                   </td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+      <a href="{{ url_for('index') }}"><button >Retour à la page d'acceuil</button></a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil QCM Cardiologie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bienvenue sur la plateforme de QCM Cardiologie</h1>
+    <p>Dernière moyenne: {{ derniere_moyenne }}</p>
+    <p>Votre rang: {{ rang }}</p>
+    <a href="/qcm/0"><button>Re(faire) QCM</button></a>
+
+    <h2>Classement des membres (Simu)</h2>
+    <ul>
+        {% for membre, stats in membres.items() %}
+            <li>{{ membre }}: Rang {{ stats.rang }}, Moyenne:
+            {% if stats.moyennes %}
+              {{ stats.moyennes[-1] }}
+              {% else %}
+                Aucune moyenne enregistrée
+             {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil</title>
+</head>
+<body>
+    <h1>Bienvenue sur la plateforme pour étudiants en médecine</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    <form method="post" action="/login">
+        <label for="username">Nom d'utilisateur:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Mot de passe:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Se connecter">
+    </form>
+</body>
+</html>

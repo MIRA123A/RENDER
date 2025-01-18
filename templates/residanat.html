@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Residanat</title>
+</head>
+<body>
+    <h1>Residanat</h1>
+    <ul>
+       {% for matiere in matieres %}
+         <li><a href="/{{ matiere.nom|lower }}">{{ matiere.nom }}</a></li>
+       {% endfor %}
+    </ul>
+    <a href="/parcours">Retour au choix du parcours</a>
+</body>
+</html>

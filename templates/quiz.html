@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QCM</title>
+    <style>
+        .proposition {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+            display: block; /* Chaque proposition sur une nouvelle ligne */
+        }
+        .correct {
+            background-color: lightgreen;
+        }
+        .incorrect {
+            background-color: lightcoral;
+        }
+        .manquant {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>QCM {{ qcm.id }}</h1>
+     <div id="timer">00:00</div>
+    <form method="post">
+        <p>{{ qcm.question }}</p>
+        {% for i, proposition in enumerate(qcm.propositions) %}
+            <label class="proposition
+                {% if qcm.valide %}
+                    {% if i in qcm.reponses_correctes and i in qcm.reponses_utilisateur %}
+                        correct
+                    {% elif i in qcm.reponses_correctes and i not in qcm.reponses_utilisateur %}
+                        manquant
+                    {% elif i not in qcm.reponses_correctes and i in qcm.reponses_utilisateur %}
+                        incorrect
+                    {% endif %}
+                {% endif %}
+            ">
+                <input type="checkbox" name="reponses" value="{{ i }}"
+                       {% if qcm.valide %} disabled {% endif %}
+                       {% if i in qcm.reponses_utilisateur %} checked {% endif %}>
+                {{ proposition }}
+            </label>
+        {% endfor %}
+
+        {% if qcm.valide %}
+            {% set nb_correctes = 0 %}
+            {% for reponse_user in qcm.reponses_utilisateur %}
+                {% if reponse_user in qcm.reponses_correctes %}
+                    {% set nb_correctes = nb_correctes + 1 %}
+                {% endif %}
+            {% endfor %}
+
+            {% set score = (nb_correctes / qcm.reponses_correctes | length * 100) if qcm.reponses_correctes | length > 0 else 0 %}
+
+            <p>Score : {{ score }}%</p>
+            {% set temps_ecoule = qcm.temps_fin - qcm.temps_debut %}
+            <p>Temps passé : {{ "%.2f" | format(temps_ecoule)  }} secondes</p>
+            {% if current_qcm_index < total_qcms - 1 %}
+                <button type="submit" name="suivant">Suivant</button>
+            {% else %}
+              <button type="submit" name="terminer">Terminer</button>
+            {% endif %}
+        {% else %}
+            <button type="submit" >Valider</button>
+        {% endif %}
+
+         {% if current_qcm_index > 0 and not qcm.valide %}
+            <button type="submit" name="precedent">Précédent</button>
+        {% endif %}
+    </form>
+
+<script>
+    let startTime = Date.now();
+    let timerInterval;
+
+    function updateTimer() {
+        const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+        const minutes = Math.floor(elapsedTime / 60).toString().padStart(2, '0');
+        const seconds = (elapsedTime % 60).toString().padStart(2, '0');
+        document.getElementById('timer').textContent = `${minutes}:${seconds}`;
+    }
+
+
+    window.onload = function() {
+            {% if not qcm.valide %}
+                timerInterval = setInterval(updateTimer, 1000);
+                {% if qcm.temps_debut == 0 %}
+                 startTime = Date.now(); // On démarre le compteur lorsqu'on charge la page
+                 fetch('/set_start_time', {
+                         method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                           body: JSON.stringify({start_time: startTime / 1000}),
+                      });
+                 {% else %}
+                     startTime = {{ qcm.temps_debut * 1000 | int }};
+                     updateTimer();
+                {% endif %}
+             {% else %}
+                clearInterval(timerInterval);
+                startTime = {{ qcm.temps_debut * 1000 | int }};
+                 updateTimer();
+            {% endif %}
+        };
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+      clearInterval(timerInterval);
+    });
+
+</script>
+</body>
+</html>

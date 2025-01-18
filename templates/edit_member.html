@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier un Membre</title>
+     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+             display: flex;
+           flex-direction: column;
+         align-items: center;
+         text-align: center;
+       }
+       form {
+         margin-top : 20px;
+        width : 300px;
+        background-color: #fff;
+        padding: 20px;
+          border-radius : 8px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         }
+         input {
+             margin-bottom: 10px;
+             padding: 10px;
+            border-radius : 5px;
+              border: 1px solid #ccc;
+              width : 100%;
+              box-sizing: border-box;
+         }
+         button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+             margin: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+         select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: white; /* White background */
+            border: 1px solid #ccc; /* Thin border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 10px;
+             margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1rem;
+            color: #333;
+            cursor: pointer;
+             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+            background-repeat: no-repeat;
+             background-position: right 10px center;
+            background-size : 1.2em;
+              padding-right : 30px;
+              transition: border-color 0.3s ease; /* smooth transition on hover */
+
+         }
+        select:focus {
+            outline: none;
+           border-color : #4CAF50;
+        }
+          select::-ms-expand { /* For IE and Edge */
+             display: none;
+         }
+        button:hover {
+            background-color: #367c39;
+        }
+      .error{
+         color : red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modifier un Membre</h1>
+    <p>Modifier les informations de : <strong>{{ username }}</strong></p>
+      <form method="post">
+        <label for="password">Nouveau Mot de passe:</label>
+        <input type="password" name="password" placeholder="Laissez vide pour ne pas modifier">
+          <label for="email">Nouvel Email:</label>
+        <input type="email" name="email" placeholder="Laissez vide pour ne pas modifier">
+         <label for="level">Niveau d'étude</label>
+           <select name="level" required>
+            <option value="PCEM1" {% if member.level == 'PCEM1' %}selected{% endif %}>PCEM1</option>
+            <option value="PCEM2" {% if member.level == 'PCEM2' %}selected{% endif %}>PCEM2</option>
+            <option value="DCEM1" {% if member.level == 'DCEM1' %}selected{% endif %}>DCEM1</option>
+            <option value="DCEM2" {% if member.level == 'DCEM2' %}selected{% endif %}>DCEM2</option>
+             <option value="DCEM3" {% if member.level == 'DCEM3' %}selected{% endif %}>DCEM3</option>
+        </select>
+        <button type="submit">Modifier</button>
+    </form>
+      <a href="{{ url_for('admin_dashboard') }}"><button>Retour</button></a>
+</body>
+</html>

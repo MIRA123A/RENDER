@@ -1,0 +1,89 @@
+{
+  "PCEM1": {
+    "semestre1": [
+       "theme1",
+      
+
+       "theme2A",
+        "theme3",
+        "theme4",
+        "theme5A",
+        "theme7"
+      ],
+    "semestre2": [
+        "theme2B",
+        "theme5B",
+         "theme6",
+         "theme8",
+         "theme9"
+      ],
+      "semestre3": [
+       "theme1",
+      
+
+       "theme2A",
+        "theme3",
+        "theme4",
+        "theme5A",
+        "theme71"
+      ]
+    
+      
+  },
+  "PCEM2": {
+    "semestre1": [
+        "theme10",
+        "theme12",
+         "theme13",
+         "theme14",
+         "theme15"
+    ],
+     "semestre2": [
+        "theme11",
+         "theme16",
+         "theme17"
+        ]
+   },
+    "DCEM1": {
+    "semestre1": [
+        "cardio",
+        "rhumato",
+        "ortho",
+        "pneumo"
+     ],
+       "semestre2": [
+           "hemato",
+           "neuro",
+           "infectieux"
+        ]
+   },
+    "DCEM2": {
+      "semestre1": [
+        "chirurgie",
+         "endocrino",
+        "gastro",
+        "preventive"
+      ],
+        "semestre2": [
+           "pediatrie",
+           "chir_ped",
+            "nephro",
+             "uro"
+        ]
+    },
+    "DCEM3": {
+      "semestre1": [
+         "orl",
+        "psy",
+        "ophtalmo",
+        "dermato",
+         "gyneco",
+         "travail"
+       ],
+        "semestre2": [
+            "legale",
+           "therapeutique",
+           "medecine_interne"
+        ]
+    }
+}

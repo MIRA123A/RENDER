@@ -1,0 +1,340 @@
+[
+    {
+        "id": 1,
+        "question": "[SESSION JANVIER 2024] : La pression d’ultrafiltration glomérulaire:",
+        "propositions": [
+            "Augmente suite à une vasoconstriction de l’artériole afférente.",
+            "Est supérieure à la pression hydrostatique de la capsule de Bowman.",
+            "Est pratiquement constante sur toute la longueur du capillaire glomérulaire.",
+            "Est inversement proportionnelle au DFG.",
+            "Varie en fonction du DSR."
+        ],
+        "correct_answers": [1],
+        "cours": 1
+    },
+    {
+        "id": 2,
+        "question": "[SESSION JANVIER 2024] : Le sodium Na+:",
+        "propositions": [
+            "Est partiellement réabsorbée par le rein.",
+            "Subit une sécrétion tubulaire.",
+            "A une valeur de clairance située entre celle du DFG et celle du DSR.",
+            "A un cœfficient d’extraction entre 0 et 0,2.",
+            "A une clairance fractionnelle entre 1 et 1,5."
+        ],
+        "correct_answers": [0],
+        "cours": 1
+    },
+    {
+        "id": 3,
+        "question": "[SESSION JANVIER 2024] : La clairance de l’inuline:",
+        "propositions": [
+            "Est le volume virtuel du plasma totalement débarrassé de l’inuline par unité de temps.",
+            "A une valeur obtenue en divisant la charge filtrée de l’inuline sur sa concentration plasmatique.",
+            "Est égale à celle de la créatinine.",
+            "A une valeur égale à celle du débit plasmatique rénal (DPR).",
+            "Permet de poser le diagnostic d’une insuffisance rénale."
+        ],
+        "correct_answers": [0],
+        "cours": 1
+    },
+    {
+        "id": 4,
+        "question": "[SESSION JANVIER 2024] : Chez ce patient (Riadh, étudiant de 25 ans):",
+        "propositions": [
+            "Le coefficient d’ultrafiltration est diminué.",
+            "La pression nette d’ultrafiltration est augmentée.",
+            "La pression hydrostatique dans le capillaire glomérulaire est augmentée.",
+            "La pression oncotique dans le capillaire glomérulaire est augmentée.",
+            "La pression hydrostatique dans la capsule de Bowman est diminuée."
+        ],
+        "correct_answers": [2],
+        "cours": 1
+    },
+    {
+        "id": 5,
+        "question": "[SESSION JANVIER 2024] : Chez ce patient, les mécanismes extrinsèques régulateurs du DFG:",
+        "propositions": [
+            "Entraînent une augmentation du DFG.",
+            "Impliquent une VC de l’artériole afférente.",
+            "Mettent en jeu le SRA 2.",
+            "Impliquent une stimulation du SN sympathique.",
+            "Mettent en jeu une stimulation du FAN."
+        ],
+        "correct_answers": [3],
+        "cours": 1
+    },
+    {
+        "id": 6,
+        "question": "[SESSION JANVIER 2024] : Chez ce patient:",
+        "propositions": [
+            "Les urines primitives sont hyposmotiques.",
+            "La sécrétion d’aldostérone est stimulée.",
+            "La sécrétion d’ADH est inhibée.",
+            "La clairance d’eau libre est négative.",
+            "Le gradient osmotique cortico papillaire augmente."
+        ],
+        "correct_answers": [2],
+        "cours": 1
+    },
+    {
+        "id": 7,
+        "question": "[SESSION JANVIER 2024] : La réabsorption active au niveau du tube contourné proximal concerne:",
+        "propositions": [
+            "Les ions phosphates.",
+            "Les ions bicarbonates.",
+            "La créatinine.",
+            "L’urée.",
+            "Les ions sodium."
+        ],
+        "correct_answers": [1],
+        "cours": 1
+    },
+    {
+        "id": 8,
+        "question": "[SESSION JANVIER 2024] : La réabsorption rénale du glucose:",
+        "propositions": [
+            "Se fait au niveau du tube contourné distal.",
+            "Peut être partielle chez le sujet sain.",
+            "Par unité de temps est égale à la charge filtrée chez le sujet sain.",
+            "Favorise la réabsorption d’eau au niveau du tube contourné proximal.",
+            "Est maximale lorsque la glycémie est supérieure à 4 g/l."
+        ],
+        "correct_answers": [2],
+        "cours": 1
+    },
+    {
+        "id": 9,
+        "question": "[SESSION JANVIER 2024] : Dans un diabète sucré métabolique non traité, on peut observer:",
+        "propositions": [
+            "Une augmentation du débit plasmatique rénal.",
+            "Une augmentation de la charge filtrée de glucose.",
+            "Une diminution du Tm de réabsorption du glucose.",
+            "Une polyurie avec urines hyperosmotique.",
+            "Une hypoosmolarité plasmatique."
+        ],
+        "correct_answers": [1],
+        "cours": 1
+    },
+    {
+        "id": 10,
+        "question": "[SESSION JANVIER 2024] : Au niveau de l’anse de Henlé:",
+        "propositions": [
+            "La réabsorption de l’eau se fait le long de la branche descendante.",
+            "La réabsorption de sodium se fait le long de la branche ascendante.",
+            "Le liquide tubulaire est hyperosmotique à la fin de la branche ascendante.",
+            "Les échanges hydroélectrolytiques contribuent à la création du gradient osmotique corticopapillaire.",
+            "Le furosémide (Lasilix®) augmente la réabsorption du sodium."
+        ],
+        "correct_answers": [3],
+        "cours": 1
+    },
+    {
+        "id": 11,
+        "question": "[SESSION JANVIER 2024] : La clairance de l’eau libre:",
+        "propositions": [
+            "Correspond à la différence entre le débit urinaire et la clairance osmotique.",
+            "Renseigne sur le pouvoir de concentration des urines.",
+            "Est positive en cas de restriction hydrique.",
+            "Est négative en cas de diabète insipide.",
+            "Est négative en cas d’hypovolémie."
+        ],
+        "correct_answers": [3],
+        "cours": 1
+    },
+    {
+        "id": 12,
+        "question": "[SESSION JANVIER 2024] : La miction:",
+        "propositions": [
+            "Se déclenche sous l’effet d’une distension vésicale.",
+            "Est due a une stimulation du système nerveux sympathique.",
+            "Se traduit par une contraction du muscle détrusor.",
+            "S’accompagne d’une contraction du sphincter interne de l’urètre.",
+            "N’est pas soumise au contrôle par le cortex cérébral."
+        ],
+        "correct_answers": [2],
+        "cours": 1
+    },
+    {
+        "id": 13,
+       "question": "[SESSION JANVIER 2024] : Chez un sujet sain qui s'alimente normalement, les urines définitives contiennent :",
+        "propositions": [
+            "Des protéines à poids moléculaire > 70 KD.",
+            "L’urée.",
+            "Des ions HCO3- à un taux supérieur à 4.800 mm /24H.",
+            "Des ions H+.",
+            "Des corps cétoniques."
+        ],
+        "correct_answers": [1],
+        "cours": 1
+    },
+    {
+        "id": 14,
+        "question": "[SESSION JANVIER 2024] : Le prélèvement artériel pour mesurer les gaz du sang:",
+        "propositions": [
+            "Est un geste invasif.",
+            "Est potentiellement douloureux.",
+            "Se fait à jeun.",
+            "Ne peut pas être réalisé si le patient est sous oxygène.",
+            "Nécessite l’utilisation d’une seringue non héparinée."
+        ],
+        "correct_answers": [0],
+        "cours": 1
+    },
+    {
+        "id": 15,
+        "question": "[SESSION JANVIER 2024] : Concernant la veine rénale gauche:",
+        "propositions": [
+            "Elle est plus courte que l’artère rénale gauche.",
+            "Traverse la pince aorto-mésentérique.",
+            "Passe en arrière de l’aorte abdominale.",
+            "Reçoit la veine génitale gauche.",
+            "Se jette dans la veine cave inférieure à la hauteur de L1."
+        ],
+        "correct_answers": [1],
+        "cours": 1
+    },
+    {
+        "id": 16,
+        "question": "[SESSION JANVIER 2024] : Une ou plusieurs réponses sont justes concernant la vascularisation de la verge:",
+        "propositions": [
+            "L’artère caverneuse chemine dans le corps caverneux et participe activement à l’érection.",
+            "L’artère dorsale de la verge chemine entre la peau et le fascia de Buck.",
+            "L’artère bulbo urétrale longe l’uretère et provient de l’artère pudendale (hon-teuse interne).",
+            "Toutes les artères de la verge sont issues de l’artère pudendale, branche de l’artère iliaque externe.",
+            "Il existe deux veines dorsales de la verge, une superficielle et une profonde séparée par le Dartos."
+        ],
+        "correct_answers": [0, 1, 2],
+        "cours": 1
+    },
+    {
+        "id": 17,
+        "question": "[SESSION JANVIER 2024] : Quel(s) est(sont) l’(es) élément(s) de fixité de la trompe?",
+        "propositions": [
+            "Mésosalpinx.",
+            "Ligament utero-ovarien.",
+            "Ligament tubo-ovarien.",
+            "Ligament lombo-ovarien.",
+            "Ligament rond."
+        ],
+        "correct_answers": [0, 1],
+        "cours": 1
+    },
+    {
+        "id": 18,
+        "question": "[SESSION JANVIER 2024] : Au cours du développement de la glande mammaire:",
+        "propositions": [
+            "L’aplasie mammaire est l’absence totale de sein (glande et plaque aréolo-mamelonnaire).",
+            "La dysplasie mammaire se définit par une hyperplasie glandulaire mammaire.",
+            "Les canaux galactophores sont sous le contrôle hormonal à la puberté.",
+            "Les canaux galactophores et les sinus mammaires ne se forment qu’à la grossesse.",
+            "La croissance des glandes mammaires est contrôlée par l’œstrogène."
+        ],
+        "correct_answers": [0, 1, 4],
+        "cours": 1
+    },
+    {
+        "id": 19,
+        "question": "[SESSION JANVIER 2022] : Le tronc cœliaque:",
+        "propositions": [
+            "Naît à la hauteur de T12.",
+            "Naît de la face latérale de l’aorte.",
+            "Naît de l’aorte juste au dessous de l’artère mésentérique supérieure.",
+            "Se divise en 3 branches.",
+            "Donne l’artère diaphragmatique inférieure."
+        ],
+        "correct_answers": [1, 3],
+        "cours": 1
+    },
+    {
+        "id": 20,
+        "question": "[SESSION JANVIER 2022] : L’artère mésentérique supérieure :",
+        "propositions": [
+            "Naît de la face antérieure de l'aorte abdominale.",
+            "Naît juste au dessous de l'artère rénal.",
+            "Naît en regard de L1.",
+            "Donne l'artère splénique et gastrique gauche.",
+            "Donne l'artère surrénalienne supérieure."
+        ],
+        "correct_answers": [1, 3],
+        "cours": 1
+    },
+    {
+        "id": 21,
+        "question": "[SESSION JANVIER 2022] : L’artère mésentérique supérieure :",
+        "propositions": [
+            "Nait de la face antérieure de l’aorte.",
+            "Est située dans l’espace rétropéritonéal latéral.",
+            "Est situé a gauche de la veine cave.",
+            "Se termine au niveau du bassin.",
+            "Se termine en donnant les artères iliaques primitives et l’artère sacré médiane."
+        ],
+        "correct_answers": [1, 2],
+        "cours": 1
+    },
+    {
+        "id": 22,
+        "question": "[SESSION JANVIER 2022] : L’espace rétropéritonéale médiane est limité :",
+        "propositions": [
+            "En haut le diaphragme.",
+            "En bas de façon conventionnelle par le coccyx.",
+            "Latéralement de façon conventionnelle un double plan sagittal passant par le sommet des processus transverse.",
+            "En arrière par le plan osseux des 2 derniers vertèbres thoracique et 5 vertèbres lom-baires.",
+            "En avant par la paroi abdominale."
+        ],
+        "correct_answers": [1, 3, 4],
+        "cours": 1
+    },
+    {
+        "id": 23,
+        "question": "[SESSION JANVIER 2022] : Le plexus cœliaque est formé par 3 paires ganglionnaires, qui sont :",
+        "propositions": [
+            "Les ganglions semi lunaires.",
+            "Les ganglions mésentériques supérieurs.",
+            "Les ganglions aortico-rénaux.",
+            "Les ganglions mésentériques inférieurs.",
+            "Les ganglions gonadiques."
+        ],
+        "correct_answers": [1, 2, 3],
+        "cours": 1
+    },
+    {
+        "id": 24,
+        "question": "[SESSION JANVIER 2022] : Les branches afférentes du plexus solaire comprennent :",
+        "propositions": [
+            "Le nerf vague droit.",
+            "Le nerf grand splanchnique.",
+            "Le nerf petit splanchnique.",
+            "Le nerf splanchnique inférieure.",
+            "Le nerf vague gauche."
+        ],
+        "correct_answers": [1, 2, 3],
+        "cours": 1
+    },
+    {
+        "id": 25,
+        "question": "[SESSION JANVIER 2022] : Le rein :",
+        "propositions": [
+            "A 12 cm de long.",
+            "Est un organe intra péritonéal.",
+            "Le grand axe longitudinal est oblique en caudal latéral.",
+            "Présente un axe transversal oblique en ventral médial.",
+            "Présente un hile au niveau de son pôle supérieur."
+        ],
+        "correct_answers": [1, 4],
+        "cours": 1
+    },
+    {
+        "id": 26,
+       "question": "[SESSION JANVIER 2022] : Concernant le vagin :",
+        "propositions": [
+            "Le cul de sac dorsal est plus profond que le ventral.",
+            "Le triangle vaginal (de Pawlick) est situé sur la paroi dorsale.",
+            "Les artères utérines participent à la vascularisation du vagin.",
+            "L’extrémité inférieure du vagin contribue à la formation du vestibule vulvaire.",
+            "Le vagin n’a pas de rapports avec le trigone vésical."
+        ],
+        "correct_answers": [1, 3, 4],
+        "cours": 1
+    }
+]

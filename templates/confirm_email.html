@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Confirmation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+           flex-direction: column;
+         align-items: center;
+         text-align: center;
+        }
+         form {
+         margin-top : 20px;
+        width : 300px;
+        background-color: #fff;
+        padding: 20px;
+          border-radius : 8px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         }
+          input {
+             margin-bottom: 10px;
+             padding: 10px;
+            border-radius : 5px;
+              border: 1px solid #ccc;
+              width : 100%;
+              box-sizing: border-box;
+         }
+         button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+             margin: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #367c39;
+        }
+        .error {
+           color : red;
+         }
+    </style>
+</head>
+<body>
+    <h1>Email Confirmation</h1>
+   {% if error %}
+      <p class = "error">{{error}}</p>
+    {% endif %}
+    <p>A confirmation code has been sent to your email address. Please enter the code below to activate your account.</p>
+    <form method="post">
+        <label for = "code">Code de confirmation</label>
+        <input type="text" name="code" id = "code" placeholder="Enter confirmation code" required>
+        <button type="submit">Confirm</button>
+    </form>
+     <button type="button" onclick="window.location.href='{{ url_for('login') }}'">Retour à la page login</button>
+</body>
+</html>

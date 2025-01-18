@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>QCM {{ current_qcm_index + 1 }}</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .timer {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .proposition-container {
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .proposition-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .vert {
+            background-color: #aaffaa; /* Vert clair */
+        }
+        .rouge {
+            background-color: #ffaaaa; /* Rouge clair */
+        }
+        .jaune {
+            background-color: #ffffaa; /* Jaune clair */
+        }
+        .resultats-container {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        #stop-btn {
+            padding: 10px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        #stop-btn:hover {
+            background-color: #e0e0e0;
+        }
+        .pause-btn {
+          background-color : #f0f0f0;
+        }
+       .pause-btn.paused {
+          background-color : #ffaaaa; /* Rouge clair */
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+         button:hover {
+            background-color: #367c39;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer">
+         <span id="timer-display">00:00</span>
+         <button  id="stop-btn" class="pause-btn">Pause</button>
+    </div>
+    <h1>{{ qcm.question }}</h1>
+    <form method="post">
+      <input type="hidden" name="time_at_valide" id="time_at_valide" value="">
+        {% for i, option in propositions_enumerate %}
+            <div class="proposition-container {% if qcm.done and qcm.results and loop.index in qcm.results['correct'] %}
+                     {% if loop.index in qcm.user_answers %} vert
+                      {% else %} jaune {% endif %}
+                 {% elif qcm.done and qcm.results and loop.index in qcm.results['incorrect'] %} rouge
+                 {% endif %}">
+                <label>
+                    <input type="checkbox" name="answers" value="{{ loop.index }}"
+                            {% if qcm_done %} disabled {% endif %} >
+                    {{ i }} - {{ option }}
+                </label>
+            </div>
+        {% endfor %}
+
+        {% if qcm.done %}
+            <p>Votre moyenne pour ce QCM est de : {{ qcm.calculate_moyenne()|round(2) }}%</p>
+              <p>Temps écoulé pour ce QCM: {{ timer }}</p>
+            <button type="submit" name="suivant">Suivant</button>
+       {% else %}
+          <button type="submit" name="valider">Valider</button>
+        {% endif %}
+        
+        {% if current_qcm_index > 0 %}
+            <button type="submit" name="previous">Précédent</button>
+        {% endif %}
+    </form>
+     <script>
+       var timerDisplay = document.getElementById("timer-display");
+       var pauseButton = document.querySelector('.pause-btn')
+       var startTime = new Date().getTime() / 1000;
+        var isPaused = false;
+        var elapsedTime = 0;
+        var time_at_pause = 0;
+        var form = document.querySelector('form');
+       var timeAtValideInput = document.getElementById('time_at_valide');
+
+
+       form.addEventListener('submit', function() {
+          timeAtValideInput.value = elapsedTime;
+       });
+
+       function updateTimer() {
+         if (!isPaused) {
+            var now = new Date().getTime() / 1000;
+              elapsedTime = now - startTime +  time_at_pause;
+            var minutes = Math.floor(elapsedTime / 60);
+              var seconds = Math.floor(elapsedTime % 60);
+             minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+           timerDisplay.innerText = minutes + ":" + seconds;
+        }
+     }
+       setInterval(updateTimer, 1000);
+       pauseButton.addEventListener('click', function() {
+       isPaused = !isPaused;
+        if(isPaused){
+            pauseButton.classList.add('paused');
+              time_at_pause = elapsedTime;
+           pauseButton.innerText = "Resume";
+         }
+        else{
+           pauseButton.innerText = "Pause";
+             startTime = new Date().getTime() / 1000
+            pauseButton.classList.remove('paused');
+        }
+       });
+     </script>
+</body>
+</html>

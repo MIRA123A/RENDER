@@ -720,7 +720,7 @@ def qcm(matiere):
             minutes, seconds = divmod(int(time_at_valide), 60)
             timer_qcm = f"{minutes:02}:{seconds:02}"
 
-            propositions_enumerate = list(zip(map(chr, range(65, 65 + len(current_qcm.propositions))), current_qcm.positions))
+            propositions_enumerate = list(zip(map(chr, range(65, 65 + len(current_qcm.propositions))), current_qcm.propositions))
             
             session['disable_valider'] = True  # disable button when page loads in next QCM
 
